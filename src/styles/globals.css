@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --border: 240 6% 90%;
+    --foreground: 240 6% 10%;
+    --muted: 240 5% 84%;
+    --muted-foreground: 240 4% 46%;
+    --ring: 271, 91%, 65%;
+    --card-background: 0 0% 98%;
+    --primary-default: 271 91% 65%;
+    --accent-foreground: 269 100% 92%;
+  }
+
+  .dark {
+    --background: 240 6% 10%;
+    --border: 240 5% 26%;
+    --foreground: 0 0% 100%;
+    --muted: 240 5% 84%;
+    --muted-foreground: 240 5% 65%;
+    --ring: 271, 91%, 65%;
+    --card-background: 240 4% 16%;
+    --primary-default: 271 91% 65%;
+    --accent-foreground: 272 72% 47%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* font-feature-settings: "rlig" 1, "calt" 1; */
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+  }
+}
