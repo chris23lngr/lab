@@ -12,6 +12,10 @@ export const siteConfig = {
       label: "Components",
     },
     {
+      href: "/about",
+      label: "About",
+    },
+    {
       href: "https://github.com/chris23lngr",
       label: "Github",
       external: true,

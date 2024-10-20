@@ -98,7 +98,7 @@ const TabsIndicator = React.forwardRef<
       ref={ref}
       {...rest}
       className={cn(
-        "absolute rounded-full bg-muted",
+        "absolute rounded-full bg-accent-foreground",
         orientation == "horizontal"
           ? "h-[calc(100%-8px)]"
           : "w-[calc(100%-8px)]",
@@ -173,7 +173,7 @@ const TabsTrigger = React.forwardRef<
     <TabsPrimitive.Trigger
       ref={value == context.selected ? context.activeTrigger : null}
       className={cn(
-        "relative z-[1] inline-flex items-center justify-center whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium ring-offset-background transition-all  transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:text-foreground",
+        "relative z-[1] inline-flex items-center justify-center whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:text-accent-500 data-[state=active]:text-foreground dark:data-[state=active]:text-accent-200",
         className,
       )}
       value={value}
