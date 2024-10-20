@@ -15,7 +15,7 @@ export default async function AboutPage() {
                 height={2048}
               />
             </div>
-            <p className="text-muted-foreground text-xs uppercase">
+            <p className="text-xs uppercase text-zinc-400 dark:text-zinc-500">
               A word from the author
             </p>
           </div>
