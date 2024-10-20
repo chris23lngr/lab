@@ -9,7 +9,7 @@ interface CursorAreaProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const CursorArea = React.forwardRef<HTMLDivElement, CursorAreaProps>(
-  (props, forwardRef) => {
+  (props) => {
     const { className, children, asChild, ...rest } = props;
     const ref = React.useRef<HTMLDivElement>(null);
     const [isHovered, setIsHovered] = React.useState(false);

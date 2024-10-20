@@ -41,7 +41,11 @@ export default function HomePage() {
 
           <div className="mt-24 grid grid-cols-1 gap-8 md:grid-cols-2">
             {Object.values(Index).map((component) => (
-              <Link href={`/component/${component.id}`} className="group">
+              <Link
+                key={component.id}
+                href={`/component/${component.id}`}
+                className="group"
+              >
                 <div className="rounded-lg border border-border bg-zinc-50 p-8 ring-4 ring-zinc-100 dark:bg-zinc-800 dark:ring-zinc-100/5">
                   <span className="block font-medium text-foreground">
                     {component.name}

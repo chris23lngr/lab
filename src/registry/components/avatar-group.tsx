@@ -15,7 +15,7 @@ const AvatarGroup = React.forwardRef<
     <div
       ref={ref}
       {...rest}
-      className={cn("flex w-fit items-center justify-start gap-2")}
+      className={cn("flex w-fit items-center justify-start gap-2", className)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >

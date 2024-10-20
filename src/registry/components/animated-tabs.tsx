@@ -34,7 +34,7 @@ const Tabs = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.Root>
 >((props, ref) => {
   const { className, defaultValue, orientation, ...rest } = props;
-  const [selected, setSelected] = React.useState<string>(defaultValue || "");
+  const [selected, setSelected] = React.useState<string>(defaultValue ?? "");
   const activeTrigger = React.createRef<HTMLButtonElement>();
 
   return (
@@ -43,7 +43,7 @@ const Tabs = React.forwardRef<
         activeTrigger: activeTrigger,
         selected,
         setSelected,
-        orientation: orientation || "horizontal",
+        orientation: orientation ?? "horizontal",
       }}
     >
       <TabsPrimitive.Root
@@ -52,6 +52,7 @@ const Tabs = React.forwardRef<
         value={selected}
         defaultValue={defaultValue}
         orientation={orientation}
+        className={className}
         {...rest}
       />
     </TabsContext.Provider>
@@ -161,7 +162,7 @@ TabsList.displayName = TabsPrimitive.List.displayName;
 const TabsTrigger = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
->((props, ref) => {
+>((props) => {
   const { className, value, ...rest } = props;
   const context = React.useContext(TabsContext);
 
