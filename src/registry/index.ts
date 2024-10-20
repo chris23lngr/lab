@@ -94,4 +94,4 @@ export const Index: Registry = {
       },
     ],
   },
-};
+} as const;

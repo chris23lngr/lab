@@ -1,5 +1,7 @@
 import { Button, buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/lib/config/site";
+import { Index } from "@/registry";
+import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 
 export default function HomePage() {
@@ -12,10 +14,9 @@ export default function HomePage() {
             <span className="text-accent-500">/lab</span>
           </h1>
           <h2 className="mt-4 max-w-screen-md text-muted-forground">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo quos,
-            autem culpa amet, animi consequuntur laboriosam vel aliquam tenetur
-            explicabo aliquid nostrum eligendi nemo provident. Odio nihil quidem
-            in pariatur.
+            A collection of flexible and reusable components for building
+            websites and web applications using Tailwind CSS, RadixUI and
+            shadcn/ui.
           </h2>
           <div className="mt-12 flex items-center justify-start gap-3">
             <Button>Components</Button>
@@ -38,27 +39,21 @@ export default function HomePage() {
             Components
           </h3>
 
-          <div className="mt-24 grid grid-cols-2 gap-8">
-            <Link
-              href={"/component/animated-pricing-card"}
-              className="group relative z-10"
-            >
-              <div className="absolute -left-4 -top-4 z-0 h-[calc(100%+2rem)] w-[calc(100%+2rem)] rounded-xl bg-card-background opacity-0 transition-opacity group-hover:opacity-100" />
-              <div className="relative z-10 min-h-32 w-full overflow-hidden rounded-lg border border-border bg-card-background"></div>
-              <p className="relative z-10 mt-4 font-medium text-foreground">
-                Animated Pricing Card
-              </p>
-            </Link>
-            <Link
-              href={"/component/animated-tabs"}
-              className="group relative z-10"
-            >
-              <div className="absolute -left-4 -top-4 z-0 h-[calc(100%+2rem)] w-[calc(100%+2rem)] rounded-xl bg-card-background opacity-0 transition-opacity group-hover:opacity-100" />
-              <div className="relative z-10 min-h-32 w-full overflow-hidden rounded-lg border border-border bg-card-background"></div>
-              <p className="relative z-10 mt-4 font-medium text-foreground">
-                Animated Tabs
-              </p>
-            </Link>
+          <div className="mt-24 grid grid-cols-1 gap-8 md:grid-cols-2">
+            {Object.values(Index).map((component) => (
+              <Link href={`/component/${component.id}`} className="group">
+                <div className="rounded-lg border border-border bg-zinc-50 p-8 ring-4 ring-zinc-100 dark:bg-zinc-800 dark:ring-zinc-100/5">
+                  <span className="block font-medium text-foreground">
+                    {component.name}
+                  </span>
+                  <span className="mt-1 block text-sm text-muted-forground">
+                    {component.description}
+                  </span>
+
+                  <ArrowRightIcon className="mt-8 size-6 transform transition-all group-hover:translate-x-6 group-hover:text-accent-600" />
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
