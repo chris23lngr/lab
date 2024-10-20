@@ -28,4 +28,27 @@ export const Index: Registry = {
       },
     ],
   },
+  "animated-tabs": {
+    id: "animated-tabs",
+    name: "Animated Tabs",
+    description:
+      "Displays a tab component, with a animated indicator, which changes on tab selection.",
+    fileName: "animated-tabs",
+    inspirations: [
+      {
+        label: "https://stripe.com",
+        url: "https://stripe.com/de/payments#global-payments",
+      },
+    ],
+    dependecies: [
+      {
+        label: "framer-motion",
+        url: "https://www.framer.com/motion/",
+      },
+      {
+        label: "@radix-ui/react-tabs",
+        url: "https://www.radix-ui.com/primitives/docs/components/tabs",
+      },
+    ],
+  },
 };
