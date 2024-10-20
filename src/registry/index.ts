@@ -51,4 +51,47 @@ export const Index: Registry = {
       },
     ],
   },
+  "avatar-group": {
+    id: "avatar-group",
+    name: "Avatar Group",
+    description:
+      "Displays a hoverable group of avatars, with a fallback, when the image is not available.",
+    fileName: "avatar-group",
+    inspirations: [
+      
+    ],
+    dependecies: [
+      {
+        label: "framer-motion",
+        url: "https://www.framer.com/motion/",
+      },
+      {
+        label: "@radix-ui/react-avatar",
+        url: "https://www.radix-ui.com/primitives/docs/components/avatar",
+      },
+    ],
+  },
+  "cursor-area": {
+    id: "cursor-area",
+    name: "Cursor Area",
+    description:
+      "When hovering over the area, the cursor changes to a custom cursor.",
+    fileName: "cursor-area",
+    inspirations: [
+      {
+        label: "https://www.figma.com/",
+        url: "https://www.figma.com/",
+      }
+    ],
+    dependecies: [
+      {
+        label: "framer-motion",
+        url: "https://www.framer.com/motion/",
+      },
+      {
+        label: "@radix-ui/react-slot",
+        url: "https://www.radix-ui.com/primitives/docs/components/slot",
+      },
+    ],
+  },
 };
